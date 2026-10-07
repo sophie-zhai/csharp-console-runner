@@ -1,0 +1,13 @@
+services:
+  runner-api:
+    build:
+      context: ./backend/Runner.Api
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:5080:8080"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      WorkRoot: /opt/csharp-runner/runner-work
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /opt/csharp-runner/runner-work:/opt/csharp-runner/runner-work

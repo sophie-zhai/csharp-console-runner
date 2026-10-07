@@ -1,0 +1,11 @@
+@RunnerApi = http://localhost:5080
+
+GET {{RunnerApi}}/health
+
+###
+POST {{RunnerApi}}/api/run
+Content-Type: application/json
+
+{
+  "code": "using System; class Program { static void Main() { Console.WriteLine(2 + 3); } }"
+}

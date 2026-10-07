@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>C# Console Runner</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="header">
+      <div>
+        <h1>C# Console Runner</h1>
+        <p>Write, run, and test console programs. No autocomplete, hints, or AI assistance.</p>
+      </div>
+      <span class="badge">Exam Mode</span>
+    </header>
+
+    <section class="panel">
+      <label for="code">Program.cs</label>
+      <textarea id="code" spellcheck="false" autocomplete="off" autocapitalize="off" autocorrect="off" aria-label="C# code editor">using System;
+
+public class Program
+{
+    public static void Main()
+    {
+        Console.WriteLine("Hello, world!");
+    }
+}</textarea>
+
+      <div class="actions">
+        <button id="runButton" class="primary" type="button">Run</button>
+        <button id="resetButton" type="button">Reset</button>
+        <span id="status" role="status" aria-live="polite"></span>
+      </div>
+    </section>
+
+    <section class="panel output-panel">
+      <div class="output-title">Output</div>
+      <pre id="output" aria-live="polite">Program output will appear here.</pre>
+    </section>
+
+    <footer>
+      This tool reports only whether the program compiled and ran. Detailed compiler and runtime diagnostics are intentionally hidden.
+    </footer>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
